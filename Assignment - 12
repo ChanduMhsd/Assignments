@@ -1,0 +1,94 @@
+# 1. Write a python script to reverse a number.
+number = int(input("Enter a number: "))
+reverse_number = 0
+while number > 0:
+    reverse_number = reverse_number * 10 + number % 10
+    number //= 10
+print("Reversed number:", reverse_number)
+
+# 2. Write a python script to check whether a given number is Prime or not
+number = int(input("Enter a number: "))
+is_prime = True
+if number <= 1:
+    is_prime = False
+else:
+    for i in range(2, int(number**0.5) + 1):
+        if number % i == 0:
+            is_prime = False
+            break
+print("Prime" if is_prime else "Not Prime")
+
+# 3. Write a python script to print all Prime numbers under 100
+print("Prime numbers under 100:")
+for number in range(2, 101):
+    if all(number % i != 0 for i in range(2, int(number**0.5) + 1)):
+        print(number, end=" ")
+
+# 4. Write a python script to print all Prime numbers between two given numbers (both
+# values inclusive)
+start = int(input("Enter the starting number: "))
+end = int(input("Enter the ending number: "))
+print("Prime numbers between", start, "and", end, "are:")
+for number in range(start, end + 1):
+    if number > 1 and all(number % i != 0 for i in range(2, int(number**0.5) + 1)):
+        print(number, end=" ")
+
+# 5. Write a python script to find next prime number of a given number
+number = int(input("Enter a number: "))
+next_prime = number + 1
+while True:
+    if all(next_prime % i != 0 for i in range(2, int(next_prime**0.5) + 1)):
+        print("Next prime number:", next_prime)
+        break
+    next_prime += 1
+
+# 6. Write a python script to print first N prime numbers
+N = int(input("Enter the value of N: "))
+print("First", N, "prime numbers are:")
+count = 0
+number = 2
+while count < N:
+    if all(number % i != 0 for i in range(2, int(number**0.5) + 1)):
+        print(number, end=" ")
+        count += 1
+    number += 1
+
+# 7. Write a python script to check whether a given pair of numbers are co-Prime
+# numbers or not.
+def gcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+if gcd(a, b) == 1:
+    print("Co-prime numbers")
+else:
+    print("Not co-prime numbers")
+
+# 8. Write a python script to print first N terms of a Fibonacci series
+N = int(input("Enter the value of N: "))
+a, b = 0, 1
+print("Fibonacci series:")
+for _ in range(N):
+    print(a, end=" ")
+    a, b = b, a + b
+
+# 9. Write a python script to calculate LCM of two numbers
+def lcm(a, b):
+    return (a * b) // gcd(a, b)
+
+num1 = int(input("Enter first number: "))
+num2 = int(input("Enter second number: "))
+print("LCM of", num1, "and", num2, "is:", lcm(num1, num2))
+
+# 10. Write a python script to calculate HCF of two numbers
+def hcf(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+
+num1 = int(input("Enter first number: "))
+num2 = int(input("Enter second number: "))
+print("HCF of", num1, "and", num2, "is:", hcf(num1, num2))
