@@ -1,0 +1,69 @@
+<!-- 1. Set an image as a background on webpage. (Mention the type of layout you will be using) -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Background Image</title>
+  <style>
+    body {
+      background-image: url('background.jpg');
+      background-size: cover; /* Using a cover layout to ensure the image covers the entire viewport */
+      background-position: center; /* Center the background image */
+      /* Other styles... */
+    }
+  </style>
+</head>
+<body>
+  <!-- Content goes here -->
+</body>
+</html>
+
+<!-- 2. Design a delete button -->
+<button style="background-color: #ff0000; color: #fff;">Delete</button>
+
+<!-- 3. Back button inside a form -->
+<form>
+  <!-- Form fields... -->
+  <button type="button" onclick="history.back()">Back</button>
+</form>
+
+<!-- 4. Design a payment page -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Payment Page</title>
+  <style>
+    /* Styles for payment page */
+  </style>
+</head>
+<body>
+  <!-- Payment form and content goes here -->
+</body>
+</html>
+
+<!-- 5. Design a filter bar for clothing website -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clothing Website</title>
+  <style>
+    /* Styles for filter bar */
+  </style>
+</head>
+<body>
+  <!-- Filter bar content goes here -->
+</body>
+</html>
+
+<!-- 6. Create a full image screen layout with a big search bar in the center -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Full Image Screen Layout</title>
+  <style>
+    /* Styles for full image screen layout */
+  </style>
+</head>
+<body>
+  <!-- Search bar in center of full screen image -->
+</body>
+</html>
