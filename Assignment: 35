@@ -1,0 +1,72 @@
+// 1. Shopping Cart Operations:
+const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey'];
+
+// a. Add 'Meat' at the beginning if not already added
+if (!shoppingCart.includes('Meat')) {
+  shoppingCart.unshift('Meat');
+}
+
+// b. Add 'Sugar' at the end if not already added
+if (!shoppingCart.includes('Sugar')) {
+  shoppingCart.push('Sugar');
+}
+
+// c. Remove 'Honey' if allergic
+const allergicToHoney = true; // Set to true if allergic
+if (allergicToHoney) {
+  const index = shoppingCart.indexOf('Honey');
+  if (index !== -1) {
+    shoppingCart.splice(index, 1);
+  }
+}
+
+// d. Modify 'Tea' to 'Green Tea'
+const teaIndex = shoppingCart.indexOf('Tea');
+if (teaIndex !== -1) {
+  shoppingCart[teaIndex] = 'Green Tea';
+}
+
+console.log("Shopping Cart:", shoppingCart);
+
+// 2. Check and Add to webTechs Array:
+const webTechs = ['HTML', 'CSS', 'JavaScript'];
+
+if (webTechs.includes('Sass')) {
+  console.log('Sass is a CSS preprocess');
+} else {
+  webTechs.push('Sass');
+  console.log('Updated webTechs Array:', webTechs);
+}
+
+// 3. Operations on Ages Array:
+const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24];
+
+// Sort the array
+ages.sort((a, b) => a - b);
+
+// Min and Max Age
+const minAge = ages[0];
+const maxAge = ages[ages.length - 1];
+
+// Median Age
+const medianAge = ages.length % 2 === 0 ? (ages[ages.length / 2 - 1] + ages[ages.length / 2]) / 2 : ages[Math.floor(ages.length / 2)];
+
+// Average Age
+const sum = ages.reduce((total, age) => total + age, 0);
+const averageAge = sum / ages.length;
+
+// Range
+const range = maxAge - minAge;
+
+// Compare values
+const minDiff = Math.abs(minAge - averageAge);
+const maxDiff = Math.abs(maxAge - averageAge);
+
+console.log('Sorted Ages:', ages);
+console.log('Min Age:', minAge);
+console.log('Max Age:', maxAge);
+console.log('Median Age:', medianAge);
+console.log('Average Age:', averageAge);
+console.log('Range:', range);
+console.log('Difference (Min - Average):', minDiff);
+console.log('Difference (Max - Average):', maxDiff);
