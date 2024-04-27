@@ -1,0 +1,58 @@
+-- 1. Create a table (student) with 3 columns (rollno, name, course).
+CREATE TABLE student (
+    rollno INT PRIMARY KEY,
+    name VARCHAR(50),
+    course VARCHAR(50)
+);
+
+-- 2. Insert records for 4 students.
+INSERT INTO student (rollno, name, course) VALUES
+(1, 'John', 'Mathematics'),
+(2, 'Alice', 'Physics'),
+(3, 'Bob', 'Chemistry'),
+(4, 'Emma', 'Biology');
+
+-- 3. Write a Select query to fetch all the students.
+SELECT * FROM student;
+
+-- 4. Update the student name of rollno 3 with ‘Mohan’
+UPDATE student SET name = 'Mohan' WHERE rollno = 3;
+
+-- 5. Delete any student from table with their rollno.
+DELETE FROM student WHERE rollno = 4;
+
+-- 6. Delete all the data from student table.
+DELETE FROM student;
+
+-- 7. Drop the student table.
+DROP TABLE student;
+
+-- 8. Create Courses table (cid, cname) where cid is a primary key and Student table (rollno, name, cid) where rollno is a primary key and cid is a foreign key.
+CREATE TABLE Courses (
+    cid INT PRIMARY KEY,
+    cname VARCHAR(50)
+);
+
+CREATE TABLE Student (
+    rollno INT PRIMARY KEY,
+    name VARCHAR(50),
+    cid INT,
+    FOREIGN KEY (cid) REFERENCES Courses(cid)
+);
+
+-- 9. Insert data in both the tables.
+INSERT INTO Courses (cid, cname) VALUES
+(1, 'Python'),
+(2, 'Java'),
+(3, 'C++');
+
+INSERT INTO Student (rollno, name, cid) VALUES
+(1, 'John', 1),
+(2, 'Alice', 1),
+(3, 'Bob', 2),
+(4, 'Emma', 3);
+
+-- 10. Select all the students who are doing a specific course, eg. Python.
+SELECT s.* FROM Student s
+JOIN Courses c ON s.cid = c.cid
+WHERE c.cname = 'Python';
