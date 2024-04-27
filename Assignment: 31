@@ -1,0 +1,61 @@
+<!-- 1. Add a "tooltip" to the paragraph below with the text "Python Web Development in Hindi". -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML Page</title>
+</head>
+<body>
+<p title="Python Web Development in Hindi">Python Web Development in Hindi</p>
+</body>
+</html>
+
+<!-- 2. In the form below, add an input field with the type "button" and the value "OK". -->
+<form action="/register">
+<input type="text">
+<input type="button" value="OK">
+</form>
+
+<!-- 3. Inside a form tag, add two radio buttons, both with the name “programming_language”. -->
+<form action="/register">
+<input type="radio" name="programming_language" value="Python">Python
+<input type="radio" name="programming_language" value="Java">Java
+</form>
+
+<!-- 4. Inside a form tag, add an empty drop down list with the name “food_menu”. -->
+<form action="/register">
+<select name="food_menu">
+</select>
+</form>
+
+<!-- 5. Inside a form tag, add a text area with the name "note". -->
+<form action="/register">
+<textarea name="note"></textarea>
+</form>
+
+<!-- 6. Inside a form tag, add a submit button with the value "Submit Form". -->
+<form action="/register">
+<input type="submit" value="Submit Form">
+</form>
+
+<!-- 7. Disable the input field below. -->
+<form action="/register">
+<input type="text" disabled>
+</form>
+
+<!-- 8. Restrict the maximum number of characters allowed in the input field to 10. -->
+<form action="/register">
+<input type="text" maxlength="10">
+</form>
+
+<!-- 9. Inside form tag, add an input field that accepts only .png files. -->
+<form action="/register">
+<input type="file" accept=".png">
+</form>
+
+<!-- 10. Add a table row with two table headers. The two table headers should have the value "Index" and "Topic". -->
+<table>
+<tr>
+<th>Index</th>
+<th>Topic</th>
+</tr>
+</table>
