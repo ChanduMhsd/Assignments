@@ -1,0 +1,52 @@
+# 1. Command to get Python version:
+python --version
+
+# 2. Python script to print "Hello Python" directly in the command line:
+python -c "print('Hello Python')"
+
+# 3. Python script stored in a file and executed from the command line:
+#    1. Create a Python script file, for example, `hello.py`, with the following content:
+  ```python
+# hello.py
+print("Hello Python")
+#       ```
+#    2. Execute the script from the command line:
+#       ```bash
+python hello.py
+#       ```
+
+# 4. Python script to print "Hello Python" using Visual Studio Code:
+#    You can create a new Python file in Visual Studio Code, type the following code, and run it:
+print("Hello Python")
+
+# 5. Python script to print "Hello" on the first line and "Python" on the second line:
+print("Hello")
+print("Python")
+
+# 6. Python script to print "MySirG" on the screen:
+print("MySirG")
+
+# 7. Python script to print "Teacher's Day" on the screen:
+print("Teacher's Day")
+
+# 8. Python script to print the value of a variable containing your name:
+name = "YourName"
+print(name)
+
+# 9. Python script to create variables to store your name, age, qualification, years of experience, and print them:
+name = "Your Name"
+age = 30
+qualification = "Your Qualification"
+experience = 5
+print("Name:", name)
+print("Age:", age)
+print("Qualification:", qualification)
+print("Years of Experience:", experience)
+
+# 10. Python script to print values of three variables, each in a new line, containing integer values:
+var1 = 10
+var2 = 20
+var3 = 30
+print(var1)
+print(var2)
+print(var3)
