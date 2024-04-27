@@ -1,0 +1,49 @@
+# 1. Write a python script to print MySirG N times on the screen
+N = int(input("Enter the value of N: "))
+for _ in range(N):
+    print("MySirG")
+
+# 2. Write a python script to print first N natural numbers
+N = int(input("Enter the value of N: "))
+for i in range(1, N + 1):
+    print(i)
+
+# 3. Write a python script to print first N natural numbers in reverse order
+N = int(input("Enter the value of N: "))
+for i in range(N, 0, -1):
+    print(i)
+
+# 4. Write a python script to print first N odd natural numbers
+N = int(input("Enter the value of N: "))
+for i in range(1, 2 * N, 2):
+    print(i)
+
+# 5. Write a python script to print first N odd natural numbers in reverse order
+N = int(input("Enter the value of N: "))
+for i in range(2 * N - 1, 0, -2):
+    print(i)
+
+# 6. Write a python script to print first N even natural numbers
+N = int(input("Enter the value of N: "))
+for i in range(2, 2 * N + 1, 2):
+    print(i)
+
+# 7. Write a python script to print first N even natural numbers in reverse order
+N = int(input("Enter the value of N: "))
+for i in range(2 * N, 1, -2):
+    print(i)
+
+# 8. Write a python script to print squares of first N natural numbers
+N = int(input("Enter the value of N: "))
+for i in range(1, N + 1):
+    print(i**2)
+
+# 9. Write a python script to print cubes of first N natural numbers
+N = int(input("Enter the value of N: "))
+for i in range(1, N + 1):
+    print(i**3)
+
+# 10. Write a python script to print first 10 multiples of N
+N = int(input("Enter the value of N: "))
+for i in range(1, 11):
+    print(i * N)
