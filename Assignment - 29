@@ -1,0 +1,126 @@
+import os
+import keyword
+import shutil
+import pickle
+
+# 1. Write a Python script to print the following status of a file:
+# a. Whether a file is read only
+# b. Whether a file is closed or not
+# c. Which file opening mode is used
+# d. Name of the file
+def file_status(file_path):
+    if os.path.exists(file_path):
+        file_info = os.stat(file_path)
+        is_read_only = not os.access(file_path, os.W_OK)
+        is_closed = not file_info.st_mode
+        mode = "r" if is_read_only else "w+"
+        print(f"a. Read only: {is_read_only}")
+        print(f"b. Closed: {is_closed}")
+        print(f"c. Opening mode: {mode}")
+        print(f"d. Name of the file: {file_path}")
+    else:
+        print("File not found.")
+
+# 2. Write a Python script to create a new file ‘myfile.txt’ and store user entered text.
+def create_file(file_path):
+    text = input("Enter text to store in file: ")
+    with open(file_path, "w") as file:
+        file.write(text)
+
+# 3. Write a Python script to read the above created file ‘myfile.txt’ and display content on the console.
+def read_file(file_path):
+    if os.path.exists(file_path):
+        with open(file_path, "r") as file:
+            print(file.read())
+    else:
+        print("File not found.")
+
+# 4. Write a Python script to store a list of city names in a file ‘cities.txt’
+def store_cities(file_path, cities):
+    with open(file_path, "w") as file:
+        for city in cities:
+            file.write(city + "\n")
+
+# 5. Write a Python script to append list of city names in a file ‘cities.txt’
+def append_cities(file_path, cities):
+    with open(file_path, "a") as file:
+        for city in cities:
+            file.write(city + "\n")
+
+# 6. Write a Python script to search whether a particular city is there in the file ‘cities.txt’ or not
+def search_city(file_path, city):
+    if os.path.exists(file_path):
+        with open(file_path, "r") as file:
+            if city in file.read():
+                print(f"{city} is present in the file.")
+            else:
+                print(f"{city} is not present in the file.")
+    else:
+        print("File not found.")
+
+# 7. Write a Python script to count the number of Python keywords occurring in a python source file.
+def count_python_keywords(file_path):
+    if os.path.exists(file_path):
+        with open(file_path, "r") as file:
+            source_code = file.read()
+            keywords_count = sum(1 for word in source_code.split() if keyword.iskeyword(word))
+            print(f"Number of Python keywords in the file: {keywords_count}")
+    else:
+        print("File not found.")
+
+# 8. Write a Python script to create a copy of a file.
+def copy_file(src_file_path, dest_file_path):
+    if os.path.exists(src_file_path):
+        shutil.copy(src_file_path, dest_file_path)
+        print("File copied successfully.")
+    else:
+        print("Source file not found.")
+
+# 9. Write a Python script to store book data in a file using pickle.
+def store_book_data(file_path, book_data):
+    with open(file_path, "wb") as file:
+        pickle.dump(book_data, file)
+    print("Book data stored successfully.")
+
+# 10. Write a Python script to extract book data from a file using pickle. Also print extracted book data.
+def extract_book_data(file_path):
+    if os.path.exists(file_path):
+        with open(file_path, "rb") as file:
+            book_data = pickle.load(file)
+            print("Extracted book data:")
+            print(book_data)
+    else:
+        print("File not found.")
+
+# Usage examples:
+
+# 1. File status
+file_status("myfile.txt")
+
+# 2. Create file
+create_file("myfile.txt")
+
+# 3. Read file
+read_file("myfile.txt")
+
+# 4. Store cities
+store_cities("cities.txt", ["New York", "London", "Tokyo"])
+
+# 5. Append cities
+append_cities("cities.txt", ["Paris", "Sydney"])
+
+# 6. Search city
+search_city("cities.txt", "Paris")
+
+# 7. Count Python keywords
+count_python_keywords("script.py")
+
+# 8. Copy file
+copy_file("myfile.txt", "mycopy.txt")
+
+# 9. Store book data
+book_data = {"Book1": 20, "Book2": 30, "Book3": 25}
+store_book_data("bookfile", book_data)
+
+# 10. Extract book data
+extract_book_data("bookfile")
