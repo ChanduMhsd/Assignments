@@ -1,0 +1,61 @@
+# 1. Write a python script to remove the last digit from a given number.
+number = int(input("Enter a number: "))
+removed_last_digit = number // 10
+print("Number after removing the last digit:", removed_last_digit)
+
+# 2. Write a python script to get the last digit from a given number.
+number = int(input("Enter a number: "))
+last_digit = number % 10
+print("Last digit of the number:", last_digit)
+
+# 3. Write a python script to swap data of two variables
+a = input("Enter the value of variable a: ")
+b = input("Enter the value of variable b: ")
+a, b = b, a
+print("After swapping, value of a:", a)
+print("After swapping, value of b:", b)
+
+# 4. Write a python script to find x power y, where values of x and y are given by user
+x = float(input("Enter the value of x: "))
+y = float(input("Enter the value of y: "))
+result = x ** y
+print("Result of", x, "raised to the power of", y, "is", result)
+
+# 5. Write a python script which takes a three digit number from the user and displays
+# only its first digit.
+number = int(input("Enter a three-digit number: "))
+first_digit = number // 100
+print("First digit of the number:", first_digit)
+
+# 6. Write a python script which takes a three digit number from the user and displays
+# only its middle digit.
+number = int(input("Enter a three-digit number: "))
+middle_digit = (number // 10) % 10
+print("Middle digit of the number:", middle_digit)
+
+# 7. Write a python script which takes a three digit number from the user and displays
+# only its last digit.
+number = int(input("Enter a three-digit number: "))
+last_digit = number % 10
+print("Last digit of the number:", last_digit)
+
+# 8. Write a python script to use IN operator to display the data present in the list
+data_list = [1, 2, 3, 4, 5]
+if 3 in data_list:
+    print("3 is present in the list")
+else:
+    print("3 is not present in the list")
+
+# 9. Write a python script to use NOT IN operator to display the data not present in list
+data_list = [1, 2, 3, 4, 5]
+if 6 not in data_list:
+    print("6 is not present in the list")
+
+# 10. Write a python script to use IS operator to display if both variables are the same
+# object or not?
+x = [1, 2, 3]
+y = [1, 2, 3]
+if x is y:
+    print("x and y refer to the same object")
+else:
+    print("x and y do not refer to the same object")
