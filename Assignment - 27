@@ -1,0 +1,86 @@
+# 1. Write a python script to create a ArithmeticError
+try:
+    raise ArithmeticError("Custom ArithmeticError")
+except ArithmeticError as e:
+    print(e)
+
+# 2. Write a python script to create a ValueError
+try:
+    raise ValueError("Custom ValueError")
+except ValueError as e:
+    print(e)
+
+# 3. Write a python script to handle the ArithmeticError
+try:
+    num = 10 / 0
+except ArithmeticError as e:
+    print("ArithmeticError occurred:", e)
+
+# 4. Write a python script to handle a ValueError
+try:
+    num = int("abc")
+except ValueError as e:
+    print("ValueError occurred:", e)
+
+# 5. Write a python script to handle multiple Exception in one try
+try:
+    result = 10 / 0
+except (ZeroDivisionError, TypeError) as e:
+    print("Error occurred:", e)
+
+# 6. Write a python script to create a calculator with 4 basic operations, and handle a maximum number of exceptions.
+class Calculator:
+    def add(self, a, b):
+        try:
+            return a + b
+        except Exception as e:
+            return f"Error occurred: {e}"
+
+    def subtract(self, a, b):
+        try:
+            return a - b
+        except Exception as e:
+            return f"Error occurred: {e}"
+
+    def multiply(self, a, b):
+        try:
+            return a * b
+        except Exception as e:
+            return f"Error occurred: {e}"
+
+    def divide(self, a, b):
+        try:
+            return a / b
+        except Exception as e:
+            return f"Error occurred: {e}"
+
+# 7. Write a python script to add a finally block for the above script
+try:
+    result = 10 / 0
+except ZeroDivisionError as e:
+    print("Error occurred:", e)
+finally:
+    print("Finally block executed")
+
+# 8. Write a python script to implement try except and else block for division
+try:
+    result = 10 / 2
+except ZeroDivisionError as e:
+    print("Error occurred:", e)
+else:
+    print("Division successful:", result)
+
+# 9. Write a python script to raise a ValueError.
+try:
+    raise ValueError("Custom ValueError")
+except ValueError as e:
+    print("ValueError occurred:", e)
+
+# 10. Write a python script to implemented a nested Try Except block
+try:
+    try:
+        result = 10 / 0
+    except ZeroDivisionError as e:
+        print("Inner Error:", e)
+except Exception as e:
+    print("Outer Error:", e)
