@@ -1,0 +1,94 @@
+# 1. Write a python program to create a user class with 3 properties: name, age, email.
+class User:
+    def __init__(self, name, age, email):
+        self.name = name
+        self.age = age
+        self.email = email
+
+# 2. Write a python program to create a user class with a method to greet the user.
+class User:
+    def __init__(self, name):
+        self.name = name
+    
+    def greet(self):
+        print(f"Hello, {self.name}!")
+
+# 3. Write a python program to create 2 objects of the user class and assign different values.
+user1 = User("Alice")
+user2 = User("Bob")
+
+# 4. Write a python program to init default values for user object using __init__ method.
+class User:
+    def __init__(self, name="", age=0, email=""):
+        self.name = name
+        self.age = age
+        self.email = email
+
+# 5. Write a python program to delete the age property of the user.
+delattr(User, 'age')
+
+# 6. Write a python program to create 3 user objects and find the youngest of all.
+users = [
+    User("Alice", 25),
+    User("Bob", 30),
+    User("Charlie", 20)
+]
+
+youngest_user = min(users, key=lambda x: x.age)
+print(f"Youngest user: {youngest_user.name}")
+
+# 7. Write a python program to create a Laptop class with 4 attributes (brand, ram, cpu, hdd)
+#    and 2 methods (showConfig() to print the values, __init__() to initialize the values).
+class Laptop:
+    def __init__(self, brand, ram, cpu, hdd):
+        self.brand = brand
+        self.ram = ram
+        self.cpu = cpu
+        self.hdd = hdd
+    
+    def showConfig(self):
+        print(f"Brand: {self.brand}, RAM: {self.ram}GB, CPU: {self.cpu}, HDD: {self.hdd}GB")
+
+# 8. WRT 7th Question, create 3 Laptop objects and add them to the list in the sorted
+#    order based on the ram size.
+laptop1 = Laptop("Dell", 8, "Intel", 512)
+laptop2 = Laptop("HP", 16, "AMD", 1024)
+laptop3 = Laptop("Lenovo", 12, "Intel", 750)
+
+laptops = [laptop1, laptop2, laptop3]
+sorted_laptops = sorted(laptops, key=lambda x: x.ram)
+for laptop in sorted_laptops:
+    laptop.showConfig()
+
+# 9. Write a python program to create a School class and 3 instance variables and 1 class variable.
+class School:
+    location = "New York"
+
+    def __init__(self, name, students, teachers):
+        self.name = name
+        self.students = students
+        self.teachers = teachers
+
+# 10. Define a class Employee with instance object variables empid, name, salary. Write
+#     __init__() method in the class to initialize instance object variables. Also define
+#     instance methods to input fields and display field values
+class Employee:
+    def __init__(self, empid, name, salary):
+        self.empid = empid
+        self.name = name
+        self.salary = salary
+
+    def inputFields(self):
+        self.empid = input("Enter employee ID: ")
+        self.name = input("Enter employee name: ")
+        self.salary = input("Enter employee salary: ")
+
+    def display(self):
+        print(f"Employee ID: {self.empid}")
+        print(f"Employee Name: {self.name}")
+        print(f"Employee Salary: {self.salary}")
+
+# Example usage:
+emp = Employee("", "", "")
+emp.inputFields()
+emp.display()
