@@ -1,0 +1,85 @@
+// 1. Sum of Numbers from 0 to 100
+let sum = 0;
+for (let i = 0; i <= 100; i++) {
+  sum += i;
+}
+console.log("Sum of numbers from 0 to 100:", sum);
+
+// 2. Sum of Evens and Odds
+let sumEvens = 0;
+let sumOdds = 0;
+for (let i = 0; i <= 100; i++) {
+  if (i % 2 === 0) {
+    sumEvens += i;
+  } else {
+    sumOdds += i;
+  }
+}
+console.log("Sum of evens and odds:", [sumEvens, sumOdds]);
+
+// 3. Generate Random ID
+function generateRandomId(length) {
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let id = '';
+  for (let i = 0; i < length; i++) {
+    id += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+  return id;
+}
+console.log("Random ID:", generateRandomId(10));
+
+// 4. Countries with 'and'
+const countries = ['Finland', 'Sweden', 'Switzerland', 'Thailand', 'New Zealand', 'Ireland'];
+const countriesWithAnd = countries.filter(country => country.includes('and'));
+if (countriesWithAnd.length > 0) {
+  console.log("Countries containing 'and':", countriesWithAnd);
+} else {
+  console.log("All these countries are without 'and'.");
+}
+
+// 5. Reverse Array without reverse method
+const fruits = ['banana', 'orange', 'mango', 'lemon'];
+const reversedFruits = [];
+for (let i = fruits.length - 1; i >= 0; i--) {
+  reversedFruits.push(fruits[i]);
+}
+console.log("Reversed fruits:", reversedFruits);
+
+// 6. Capitalize Array
+function capitalizeArray(array) {
+  return array.map(item => item.toUpperCase());
+}
+console.log("Capitalized array:", capitalizeArray(['apple', 'banana', 'cherry']));
+
+// 7. Sum of Array Items
+function sumOfArrayItems(array) {
+  if (!array.every(item => typeof item === 'number')) {
+    return "Not all array items are numbers.";
+  }
+  return array.reduce((total, item) => total + item, 0);
+}
+console.log("Sum of array items:", sumOfArrayItems([1, 2, 3, 4, 5]));
+
+// 8. Modify Fifth Item of Array
+function modifyArray(array) {
+  if (array.length < 5) {
+    return "Item not found";
+  }
+  array[4] = "Modified";
+  return array;
+}
+console.log("Modified array:", modifyArray([1, 2, 3, 4, 5, 6]));
+
+// 9. Check Same Data Type
+function checkSameDataType(array) {
+  const type = typeof array[0];
+  return array.every(item => typeof item === type);
+}
+console.log("Same data type:", checkSameDataType([1, 2, 3]));
+
+// 10. Validate Variable Name
+function isValidVariable(variable) {
+  const regex = /^[a-zA-Z_$][a-zA-Z\d_$]*$/;
+  return regex.test(variable) ? "Valid variable" : "Invalid variable";
+}
+console.log(isValidVariable('my_variable'));
