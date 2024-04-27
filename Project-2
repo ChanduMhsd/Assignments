@@ -1,0 +1,122 @@
+# Digital Phone Book
+
+# Initialize an empty dictionary to store user accounts
+user_accounts = {}
+
+# Initialize an empty dictionary to store contacts
+contacts = {}
+
+# Function to register a new user
+def register():
+    username = input("Enter your username: ")
+    password = input("Enter your password: ")
+    user_accounts[username] = password
+    print("Registration successful!")
+
+# Function to login
+def login():
+    username = input("Enter your username: ")
+    password = input("Enter your password: ")
+    if username in user_accounts and user_accounts[username] == password:
+        print("Login successful!")
+        return True
+    else:
+        print("Invalid username or password")
+        return False
+
+# Function to add a contact
+def add_contact():
+    name = input("Enter contact name: ")
+    number = input("Enter contact number: ")
+    contacts[name] = number
+    print("Contact added successfully!")
+
+# Function to read all contacts
+def read_all_contacts():
+    if len(contacts) == 0:
+        print("No contacts found.")
+    else:
+        print("All Contacts:")
+        for name, number in contacts.items():
+            print(f"{name}: {number}")
+
+# Function to read a specific contact
+def read_contact():
+    name = input("Enter contact name: ")
+    if name in contacts:
+        print(f"{name}: {contacts[name]}")
+    else:
+        print("Contact not found.")
+
+# Function to update a contact
+def update_contact():
+    name = input("Enter contact name to update: ")
+    if name in contacts:
+        new_number = input("Enter new contact number: ")
+        contacts[name] = new_number
+        print("Contact updated successfully!")
+    else:
+        print("Contact not found.")
+
+# Function to delete a contact
+def delete_contact():
+    name = input("Enter contact name to delete: ")
+    if name in contacts:
+        del contacts[name]
+        print("Contact deleted successfully!")
+    else:
+        print("Contact not found.")
+
+# Function to delete all contacts
+def delete_all_contacts():
+    contacts.clear()
+    print("All contacts deleted successfully!")
+
+# Main menu
+def main():
+    while True:
+        print("\nDigital Phone Book")
+        print("1. Register")
+        print("2. Login")
+        print("3. Exit")
+        choice = input("Enter your choice: ")
+        
+        if choice == '1':
+            register()
+        elif choice == '2':
+            if login():
+                while True:
+                    print("\nPhone Book Menu")
+                    print("1. Add Contact")
+                    print("2. Read All Contacts")
+                    print("3. Read Specific Contact")
+                    print("4. Update Contact")
+                    print("5. Delete Contact")
+                    print("6. Delete All Contacts")
+                    print("7. Logout")
+                    inner_choice = input("Enter your choice: ")
+                    
+                    if inner_choice == '1':
+                        add_contact()
+                    elif inner_choice == '2':
+                        read_all_contacts()
+                    elif inner_choice == '3':
+                        read_contact()
+                    elif inner_choice == '4':
+                        update_contact()
+                    elif inner_choice == '5':
+                        delete_contact()
+                    elif inner_choice == '6':
+                        delete_all_contacts()
+                    elif inner_choice == '7':
+                        break
+                    else:
+                        print("Invalid choice!")
+        elif choice == '3':
+            print("Exiting...")
+            break
+        else:
+            print("Invalid choice!")
+
+if __name__ == "__main__":
+    main()
