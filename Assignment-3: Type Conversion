@@ -1,0 +1,52 @@
+# 1. Write a python script to convert a number into str type.
+number = 42
+number_str = str(number)
+print(number_str)
+
+# 2. Write a python script to print Unicode of the character ‘m’
+char_unicode = ord('m')
+print(char_unicode)
+
+# 3. Write a python script to print character representation of a given unicode 100.
+unicode_char = chr(100)
+print(unicode_char)
+
+# 4. Write a python script to print any number and its binary equivalent
+number = 42
+binary_number = bin(number)
+print(number, "in binary is", binary_number)
+
+# 5. Write a python script to print any number and its octal equivalent.
+number = 42
+octal_number = oct(number)
+print(number, "in octal is", octal_number)
+
+# 6. Write a python script to print any number and its hexadecimal equivalent.
+number = 42
+hexadecimal_number = hex(number)
+print(number, "in hexadecimal is", hexadecimal_number)
+
+# 7. Write a python script to store binary number 1100101 in a variable and print it in
+# decimal format.
+binary_number = 0b1100101
+print("Binary number 1100101 in decimal format is", binary_number)
+
+# 8. Write a python script to store a hexadecimal number 2F in a variable and print it in
+# octal format.
+hexadecimal_number = 0x2F
+octal_number = oct(hexadecimal_number)
+print("Hexadecimal number 2F in octal format is", octal_number)
+
+# 9. Write a python script to store an octal number 125 in a variable and print it in binary
+# format.
+octal_number = 0o125
+binary_number = bin(octal_number)
+print("Octal number 125 in binary format is", binary_number)
+
+# 10. Write a python script to add two numbers 25 (in octal) and 39 (in hexadecimal) and
+# display the result in binary format.
+octal_number = 0o25
+hexadecimal_number = 0x39
+result = octal_number + hexadecimal_number
+binary_result = bin(result)
+print("Result of adding 25 (in octal) and 39 (in hexadecimal) in binary format is", binary_result)
