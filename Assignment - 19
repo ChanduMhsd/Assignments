@@ -1,0 +1,49 @@
+# 1. Write a python program to create a simple function which prints “MySirG”.
+def print_mysirg():
+    print("MySirG")
+
+# 2. Write a python program to create a function which expects two arguments and print
+# them in the function body.
+def print_arguments(arg1, arg2):
+    print(arg1, arg2)
+
+# 3. Write a python program to create a function which expects an unknown number of
+# arguments.
+def print_unknown_args(*args):
+    for arg in args:
+        print(arg)
+
+# 4. Write a python program to create a function which expects kwargs arguments.
+def print_kwargs(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+# 5. Write a python program to create a function which expects a list as an argument.
+def process_list(input_list):
+    for item in input_list:
+        print(item)
+
+# 6. Write a python program to create a function that finds a maximum of four numbers.
+def find_max(num1, num2, num3, num4):
+    return max(num1, num2, num3, num4)
+
+# 7. Write a python program to sum all the numbers in a list.
+def sum_list(input_list):
+    return sum(input_list)
+
+# 8. Write a python program to multiply all the numbers in a list.
+def multiply_list(input_list):
+    result = 1
+    for num in input_list:
+        result *= num
+    return result
+
+# 9. Write a python program to create a function to check whether a number falls in a
+# given range.
+def check_in_range(number, min_range, max_range):
+    return min_range <= number <= max_range
+
+# 10. Write a python program to create a function to check whether a given number is even
+# or odd.
+def check_even_odd(number):
+    return "Even" if number % 2 == 0 else "Odd"
