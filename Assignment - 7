@@ -1,0 +1,165 @@
+# 1. Write a python script to display the number of days in a given month number.
+month_number = int(input("Enter the month number: "))
+if month_number in [1, 3, 5, 7, 8, 10, 12]:
+    print("31 days")
+elif month_number in [4, 6, 9, 11]:
+    print("30 days")
+elif month_number == 2:
+    print("28 or 29 days")
+else:
+    print("Invalid month number")
+
+# 2. Write a menu driven program to perform following operations - Addition, Subtraction,
+# Multiplication, Division
+print("Menu:")
+print("1. Addition")
+print("2. Subtraction")
+print("3. Multiplication")
+print("4. Division")
+choice = int(input("Enter your choice: "))
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+if choice == 1:
+    print("Result:", num1 + num2)
+elif choice == 2:
+    print("Result:", num1 - num2)
+elif choice == 3:
+    print("Result:", num1 * num2)
+elif choice == 4:
+    if num2 != 0:
+        print("Result:", num1 / num2)
+    else:
+        print("Cannot divide by zero")
+else:
+    print("Invalid choice")
+
+# 3. Write a menu driven program with the following options:
+# a. Check whether a given set of three numbers are lengths of an isosceles triangle or not
+# b. Check whether a given set of three numbers are lengths of sides of a right angled triangle or not
+# c. Check whether a given set of three numbers are equilateral triangle or not
+# d. Exit.
+print("Menu:")
+print("a. Check for Isosceles Triangle")
+print("b. Check for Right Angled Triangle")
+print("c. Check for Equilateral Triangle")
+print("d. Exit")
+choice = input("Enter your choice: ")
+if choice == 'a':
+    a = float(input("Enter length of side a: "))
+    b = float(input("Enter length of side b: "))
+    c = float(input("Enter length of side c: "))
+    if a == b or b == c or c == a:
+        print("The given set of three numbers are lengths of an isosceles triangle.")
+    else:
+        print("The given set of three numbers are not lengths of an isosceles triangle.")
+elif choice == 'b':
+    a = float(input("Enter length of side a: "))
+    b = float(input("Enter length of side b: "))
+    c = float(input("Enter length of side c: "))
+    if a ** 2 + b ** 2 == c ** 2 or b ** 2 + c ** 2 == a ** 2 or c ** 2 + a ** 2 == b ** 2:
+        print("The given set of three numbers are lengths of a right angled triangle.")
+    else:
+        print("The given set of three numbers are not lengths of a right angled triangle.")
+elif choice == 'c':
+    a = float(input("Enter length of side a: "))
+    b = float(input("Enter length of side b: "))
+    c = float(input("Enter length of side c: "))
+    if a == b == c:
+        print("The given set of three numbers are lengths of an equilateral triangle.")
+    else:
+        print("The given set of three numbers are not lengths of an equilateral triangle.")
+elif choice == 'd':
+    exit()
+else:
+    print("Invalid choice")
+
+# 4. Write a program which takes user’s age and display the category of person.
+# Age below 10 years- Kid, Age below 20 - Teen, Age below 40 - young, Age below 60 -
+# Experienced, Age above or equal 60 - Senior Citizen.
+age = int(input("Enter your age: "))
+if age < 10:
+    print("You are a Kid.")
+elif age < 20:
+    print("You are a Teen.")
+elif age < 40:
+    print("You are young.")
+elif age < 60:
+    print("You are experienced.")
+else:
+    print("You are a Senior Citizen.")
+
+# 5. Write a program which takes a number from user. Print Saurabh Shukla if the number
+# is even, print Prateek Jain if the number is negative odd number and print Aditya
+# Choudhary if number is positive odd number.
+number = int(input("Enter a number: "))
+if number % 2 == 0:
+    print("Saurabh Shukla")
+elif number < 0:
+    print("Prateek Jain")
+else:
+    print("Aditya Choudhary")
+
+# 6. Write a python program to check whether a given string is a multiword string or single
+# word string using match case statement
+string = input("Enter a string: ")
+if ' ' in string:
+    print("The string is a multiword string.")
+else:
+    print("The string is a single word string.")
+
+# 7. Write a python program to check whether a given number is positive, negative or
+# zero using match case statement
+number = float(input("Enter a number: "))
+match number:
+    case x if x > 0:
+        print("Positive")
+    case x if x < 0:
+        print("Negative")
+    case _:
+        print("Zero")
+
+# 8. Write a python script to check whether two given strings are identical, first string
+# comes before the second in dictionary order or first string comes after the second
+# string in dictionary order using match case statement
+string1 = input("Enter the first string: ")
+string2 = input("Enter the second string: ")
+match string1, string2:
+    case (s1, s2) if s1 == s2:
+        print("The strings are identical.")
+    case (s1, s2) if s1 < s2:
+        print("The first string comes before the second in dictionary order.")
+    case _:
+        print("The first string comes after the second in dictionary order.")
+
+# 9. Write a python script to check whether a given year is
+# a. Non century leap year
+# b. Century leap year
+# c. Non century non leap year
+# d. Century non leap year
+year = int(input("Enter a year: "))
+match year:
+    case x if (x % 4 == 0 and x % 100 != 0) or (x % 400 == 0):
+        print("Century leap year" if x % 100 == 0 else "Non century leap year")
+    case _:
+        print("Century non leap year" if year % 100 == 0 else "Non century non leap year")
+
+# 10. Write a program to display day name on the basis of user’s liking of a colour. Ask
+# user for his favorite colour. User can answer in a sentence like “I like red colour”.
+# Assuming all colour name entered by user is in lowercase. Use match case to display
+# day name associated with the colour.
+color = input("Enter your favorite color: ")
+match color:
+    case "yellow":
+        print("Monday")
+    case "blue":
+        print("Tuesday")
+    case "orange":
+        print("Wednesday")
+    case "white":
+        print("Thursday")
+    case "black":
+        print("Friday")
+    case "red":
+        print("Saturday")
+    case _:
+        print("Sunday")
