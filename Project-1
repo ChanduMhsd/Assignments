@@ -1,0 +1,35 @@
+// Word Puzzle Game
+const wordsList = [
+  { scrambled: "RAEHTF", correct: "Father" },
+  { scrambled: "KABRE", correct: "Break" },
+  { scrambled: "CYROTNU", correct: "Country" },
+  { scrambled: "RENEG", correct: "Green" },
+  { scrambled: "OAERELANP", correct: "Aeroplane" }
+];
+
+let score = 0;
+
+console.log("Welcome to the Word Puzzle Game!");
+console.log("You have to form the correct word out of the given set of characters.");
+
+for (let i = 0; i < 5; i++) {
+  const randomIndex = Math.floor(Math.random() * wordsList.length);
+  const word = wordsList[randomIndex];
+  
+  console.log(`\nArrange the letters to form a valid word:\n${word.scrambled}`);
+  
+  const userInput = prompt("Your answer: ");
+  
+  if (userInput.toLowerCase() === word.correct.toLowerCase()) {
+    console.log("Correct!");
+    score += 1;
+  } else {
+    console.log("Wrong!");
+    score -= 1;
+  }
+  
+  // Remove the word from the list so it won't be repeated
+  wordsList.splice(randomIndex, 1);
+}
+
+console.log(`\nFinal Score: ${score}`);
