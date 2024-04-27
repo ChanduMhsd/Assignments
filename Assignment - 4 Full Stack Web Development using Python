@@ -1,0 +1,58 @@
+# 1. Write a python script to take your name as input from the user and then print it.
+name = input("Enter your name: ")
+print("Your name is:", name)
+
+# 2. Write a python script to take input from the user. Input must be a number.
+number = int(input("Enter a number: "))
+print("You entered:", number)
+
+# 3. Write a python script which takes two numbers from the user, then calculate their sum
+# and display the result.
+num1 = float(input("Enter the first number: "))
+num2 = float(input("Enter the second number: "))
+sum = num1 + num2
+print("The sum of", num1, "and", num2, "is", sum)
+
+# 4. Write a python script which takes the radius from the user and display area of a circle.
+import math
+radius = float(input("Enter the radius of the circle: "))
+area = math.pi * radius ** 2
+print("The area of the circle is:", area)
+
+# 5. Write a python script to calculate the square of a number. Number is entered by the user.
+number = float(input("Enter a number: "))
+square = number ** 2
+print("The square of", number, "is", square)
+
+# 6. Write a python script to calculate the area of Triangle. Number is entered by the user.
+base = float(input("Enter the base of the triangle: "))
+height = float(input("Enter the height of the triangle: "))
+area = 0.5 * base * height
+print("The area of the triangle is:", area)
+
+# 7. Write a python script to calculate average of three numbers, entered by the user
+num1 = float(input("Enter the first number: "))
+num2 = float(input("Enter the second number: "))
+num3 = float(input("Enter the third number: "))
+average = (num1 + num2 + num3) / 3
+print("The average of", num1, ",", num2, "and", num3, "is", average)
+
+# 8. Write a python script to calculate simple interest
+principal = float(input("Enter the principal amount: "))
+rate = float(input("Enter the interest rate (in percentage): "))
+time = float(input("Enter the time period (in years): "))
+simple_interest = (principal * rate * time) / 100
+print("The simple interest is:", simple_interest)
+
+# 9. Write a python script to calculate the volume of a cuboid.
+length = float(input("Enter the length of the cuboid: "))
+width = float(input("Enter the width of the cuboid: "))
+height = float(input("Enter the height of the cuboid: "))
+volume = length * width * height
+print("The volume of the cuboid is:", volume)
+
+# 10. Write a python script to calculate area of a rectangle
+length = float(input("Enter the length of the rectangle: "))
+width = float(input("Enter the width of the rectangle: "))
+area = length * width
+print("The area of the rectangle is:", area)
