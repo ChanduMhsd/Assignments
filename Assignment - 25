@@ -1,0 +1,108 @@
+# 1. Write a python script to create a Profile class with 3 attributes (name, email, age).
+class Profile:
+    def __init__(self, name, email, age):
+        self.name = name
+        self.email = email
+        self.age = age
+
+# 2. Write a python script to update the above Profile class with encapsulation.
+class Profile:
+    def __init__(self, name, email, age):
+        self.__name = name
+        self.__email = email
+        self.__age = age
+
+# 3. Write a python script to update 2nd Question, change email and age to __email and __age.
+class Profile:
+    def __init__(self, name, __email, __age):
+        self.__name = name
+        self.__email = __email
+        self.__age = __age
+
+# 4. Write a python script to update 2nd Question, add a class variable (platform) and create a classmethod to access it.
+class Profile:
+    platform = "Python"  # class variable
+
+    def __init__(self, name, __email, __age):
+        self.__name = name
+        self.__email = __email
+        self.__age = __age
+
+    @classmethod
+    def get_platform(cls):
+        return cls.platform
+
+# 5. Write a python script to create a Calculator class with 2 methods for adding and subtracting 2 values.
+class Calculator:
+    def add(self, a, b):
+        return a + b
+
+    def subtract(self, a, b):
+        return a - b
+
+# 6. Write a python script to create a Calculator 2.0 class with 2 methods for multiplication and division of 2 values and inherit it from the Calculator class.
+class Calculator2(Calculator):
+    def multiply(self, a, b):
+        return a * b
+
+    def divide(self, a, b):
+        if b == 0:
+            return "Cannot divide by zero"
+        else:
+            return a / b
+
+# 7. Write a python script to create a Phone class with 2 methods to print the features (calling and sms).
+class Phone:
+    def calling(self):
+        print("Calling feature")
+
+    def sms(self):
+        print("SMS feature")
+
+# 8. Write a python script to create a SmartPhone class by inheriting Calculator 2.0 and Phone Class.
+class SmartPhone(Calculator2, Phone):
+    pass
+
+# 9. Write a python script to create an application like Truecaller where names and numbers are stored. Truecaller class will have 2 methods (1st to fetch the name of a number and 2nd to add a new entry).
+class Truecaller:
+    def __init__(self):
+        self.contacts = {}
+
+    def fetch_name(self, number):
+        return self.contacts.get(number, "Name not found")
+
+    def add_entry(self, number, name):
+        self.contacts[number] = name
+
+# 10. Write a python script to add the new method in SmartPhone class which accepts Truecaller object as a parameter and call the fetch method of Truecaller.
+class SmartPhone(Calculator2, Phone):
+    def __init__(self, truecaller):
+        super().__init__()
+        self.truecaller = truecaller
+
+    def fetch_name_from_truecaller(self, number):
+        return self.truecaller.fetch_name(number)
+
+# Usage examples:
+
+# Creating a profile
+profile = Profile("John", "john@example.com", 30)
+
+# Accessing class variable
+print(Profile.get_platform())  # Output: Python
+
+# Using Calculator
+calc = Calculator()
+print(calc.add(5, 3))  # Output: 8
+print(calc.subtract(5, 3))  # Output: 2
+
+# Using Calculator 2.0
+calc2 = Calculator2()
+print(calc2.multiply(5, 3))  # Output: 15
+print(calc2.divide(10, 2))  # Output: 5.0
+
+# Using SmartPhone with Truecaller integration
+truecaller_app = Truecaller()
+truecaller_app.add_entry("1234567890", "Alice")
+smartphone = SmartPhone(truecaller_app)
+print(smartphone.fetch_name_from_truecaller("1234567890"))  # Output: Alice
