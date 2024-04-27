@@ -1,0 +1,93 @@
+// 1. Declare variables and check data types
+let firstName = "John";
+let lastName = "Doe";
+let country = "USA";
+let city = "New York";
+let age = 30;
+let isMarried = false;
+let year = 1990;
+
+console.log(typeof firstName); // string
+console.log(typeof lastName); // string
+console.log(typeof country); // string
+console.log(typeof city); // string
+console.log(typeof age); // number
+console.log(typeof isMarried); // boolean
+console.log(typeof year); // number
+
+// 2. Boolean values
+// a. Truthy values
+console.log(Boolean("Hello")); // true
+console.log(Boolean(42)); // true
+console.log(Boolean({})); // true
+
+// b. Falsy values
+console.log(Boolean("")); // false
+console.log(Boolean(0)); // false
+console.log(Boolean(null)); // false
+
+// 3. Expressions
+console.log(4 > 3 && 10 < 12); // true
+console.log(4 > 3 && 10 > 12); // false
+console.log(4 > 3 || 10 < 12); // true
+console.log(4 > 3 || 10 > 12); // true
+console.log(!(4 > 3)); // false
+console.log(!(4 < 3)); // true
+console.log(!(false)); // true
+console.log(!(4 > 3 && 10 < 12)); // false
+console.log(!(4 > 3 && 10 > 12)); // true
+console.log(!(4 === '4')); // true
+
+// 4. Check if a number is even
+let num = 6;
+console.log(num % 2 === 0); // true
+
+// 5. Grade assignment
+let score = 85;
+if (score >= 80 && score <= 100) {
+    console.log("A");
+} else if (score >= 70 && score < 80) {
+    console.log("B");
+} else if (score >= 60 && score < 70) {
+    console.log("C");
+} else if (score >= 50 && score < 60) {
+    console.log("D");
+} else {
+    console.log("F");
+}
+
+// 6. Number of days in a month
+function daysInMonth(month, year) {
+    return new Date(year, month, 0).getDate();
+}
+
+console.log(daysInMonth(2, 2024)); // 29 (Leap year example)
+
+// 7. Human readable time format
+let now = new Date();
+let yearFormat = now.getFullYear();
+let monthFormat = String(now.getMonth() + 1).padStart(2, '0');
+let dayFormat = String(now.getDate()).padStart(2, '0');
+let hourFormat = String(now.getHours()).padStart(2, '0');
+let minuteFormat = String(now.getMinutes()).padStart(2, '0');
+
+console.log(`${yearFormat}-${monthFormat}-${dayFormat} ${hourFormat}:${minuteFormat}`);
+console.log(`${dayFormat}-${monthFormat}-${yearFormat} ${hourFormat}:${minuteFormat}`);
+console.log(`${dayFormat}/${monthFormat}/${yearFormat} ${hourFormat}:${minuteFormat}`);
+
+// 8. Dollar to Rupee conversion
+function dollarsToRupees(dollars) {
+    return dollars * 82.23;
+}
+
+console.log(dollarsToRupees(10)); // 822.3
+
+// 9. Unit digit of a number
+let number = 6693;
+let unitDigit = number % 10;
+console.log(unitDigit); // 3
+
+// 10. Area of a circle
+let radius = parseFloat(prompt("Enter the radius of the circle:"));
+let area = Math.PI * radius ** 2;
+console.log(`Area of circle is ${area} having the radius ${radius}`);
