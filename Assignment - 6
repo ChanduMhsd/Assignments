@@ -1,0 +1,111 @@
+# 1. Write a python script to check whether a given number is positive or non-positive
+number = float(input("Enter a number: "))
+if number > 0:
+    print("The number is positive.")
+else:
+    print("The number is non-positive.")
+
+# 2. Write a python script to check whether a given number is divisible by 5 or not
+number = int(input("Enter a number: "))
+if number % 5 == 0:
+    print("The number is divisible by 5.")
+else:
+    print("The number is not divisible by 5.")
+
+# 3. Write a python script to check whether a given number is even or odd
+number = int(input("Enter a number: "))
+if number % 2 == 0:
+    print("The number is even.")
+else:
+    print("The number is odd.")
+
+# 4. Write a python script to print greater between two numbers. Print number only once
+# even if the numbers are the same.
+num1 = float(input("Enter the first number: "))
+num2 = float(input("Enter the second number: "))
+if num1 > num2:
+    print("The greater number is:", num1)
+elif num2 > num1:
+    print("The greater number is:", num2)
+else:
+    print("Both numbers are equal and the value is:", num1)
+
+# 5. Write a python script to print two given words in dictionary order
+word1 = input("Enter the first word: ")
+word2 = input("Enter the second word: ")
+if word1 < word2:
+    print(word1, word2)
+else:
+    print(word2, word1)
+
+# 6. Write a python script to check whether a given number is a three digit number or not.
+number = int(input("Enter a number: "))
+if 100 <= number <= 999:
+    print("The number is a three-digit number.")
+else:
+    print("The number is not a three-digit number.")
+
+# 7. Write a python script to check whether a given number is positive, negative or zero.
+number = float(input("Enter a number: "))
+if number > 0:
+    print("The number is positive.")
+elif number < 0:
+    print("The number is negative.")
+else:
+    print("The number is zero.")
+
+# 8. Write a python script to check whether a given quadratic equation has two real &
+# distinct roots, real & equal roots or imaginary roots
+a = float(input("Enter the coefficient of x^2: "))
+b = float(input("Enter the coefficient of x: "))
+c = float(input("Enter the constant term: "))
+discriminant = b**2 - 4*a*c
+if discriminant > 0:
+    print("The quadratic equation has two real and distinct roots.")
+elif discriminant == 0:
+    print("The quadratic equation has real and equal roots.")
+else:
+    print("The quadratic equation has imaginary roots.")
+
+# 9. Write a python script to check whether a given year is a leap year or not.
+year = int(input("Enter a year: "))
+if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+    print("The year is a leap year.")
+else:
+    print("The year is not a leap year.")
+
+# 10. Write a python script to print greater among three numbers. Print number only once
+# even if the numbers are the same.
+num1 = float(input("Enter the first number: "))
+num2 = float(input("Enter the second number: "))
+num3 = float(input("Enter the third number: "))
+if num1 > num2 and num1 > num3:
+    print("The greater number is:", num1)
+elif num2 > num1 and num2 > num3:
+    print("The greater number is:", num2)
+else:
+    print("The greater number is:", num3)
+
+# 11. Write a python script to take the month value in numeric format and display the
+# number of days in it.
+month = int(input("Enter the month number: "))
+if month in [1, 3, 5, 7, 8, 10, 12]:
+    print("31 days")
+elif month in [4, 6, 9, 11]:
+    print("30 days")
+elif month == 2:
+    print("28 or 29 days")
+else:
+    print("Invalid month number")
+
+# 12. Write a python script to accept one complex number from the user and display the
+# greater number between real part and imaginary part
+complex_number = complex(input("Enter a complex number: "))
+real_part = complex_number.real
+imaginary_part = complex_number.imag
+if real_part > imaginary_part:
+    print("The real part", real_part, "is greater.")
+elif imaginary_part > real_part:
+    print("The imaginary part", imaginary_part, "is greater.")
+else:
+    print("Both real and imaginary parts are equal and the value is:", real_part)
