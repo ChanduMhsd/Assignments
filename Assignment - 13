@@ -1,0 +1,43 @@
+# 1. Write a python script to store multiple items in a single variable (Items are “Java”,
+# “Python”, “SQL”, “C”) using list
+mylist = ["Java", "Python", "SQL", "C"]
+
+# 2. Write a python script to get the data type of a list.
+print("Data type of mylist:", type(mylist))
+
+# 3. Write a python script to get the last item of the list (mylist = ["Java", "C", "Python"])
+last_item = mylist[-1]
+
+# 4. Write a python script to Change the values "SQL" and "Reactnative" with the values
+# "NoSQL" and "Flutter" (List is thislist = ["Java", "SQL", "C", "Reactnative",
+# "Javascript", "Python"]
+thislist = ["Java", "SQL", "C", "Reactnative", "Javascript", "Python"]
+thislist[thislist.index("SQL")] = "NoSQL"
+thislist[thislist.index("Reactnative")] = "Flutter"
+
+# 5. Write a python script to add an item to the end of the list (item “Python”. (mylist =
+# ["Java", "SQL", "C", "Reactnative"]
+mylist.append("Python")
+
+# 6. Write a python program to append elements from another list to the current list.(
+# firstlist = ["Java", "Python", "SQL"] secondlist = ["C", "Cpp", "NoSQL"] )
+firstlist = ["Java", "Python", "SQL"]
+secondlist = ["C", "Cpp", "NoSQL"]
+firstlist.extend(secondlist)
+
+# 7. Write a python program to Print all items by referring to their index number (thislist =
+# ["Java", "SQL", "C", "Reactnative", "Javascript", "Python"]
+for index, item in enumerate(thislist):
+    print("Index:", index, "Item:", item)
+
+# 8. Write a python program to sort the list alphanumerically – thislist = ["Java", "SQL",
+# "C", "Reactjs", "Javascript", "Python"]
+thislist.sort()
+
+# 9. Write a Python script to create a list of city names taken from the user.
+city_list = input("Enter city names separated by spaces: ").split()
+
+# 10. Write a Python script to create a list, where each element of the list is a digit of a
+# given number.
+number = input("Enter a number: ")
+number_list = [int(digit) for digit in number if digit.isdigit()]
